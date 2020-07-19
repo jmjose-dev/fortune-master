@@ -1,0 +1,29 @@
+{
+  "name": "fortune-master",
+  "version": "1.0.0",
+  "description": "Determines your fortune.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmjose-dev/fortune-master.git"
+  },
+  "author": "Jan Michael Jose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmjose-dev/fortune-master/issues"
+  },
+  "homepage": "https://github.com/jmjose-dev/fortune-master#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-sanitizer": "^1.0.5",
+    "method-override": "^3.0.0",
+    "mongod": "^2.0.0",
+    "mongoose": "^5.9.25",
+    "request": "^2.88.2"
+  }
+}

@@ -59,6 +59,19 @@ app.get("/getfortune", function (req, res){
     }
   });
 });
+app.get("/adminpage", function (req, res){
+  fortunesList.find({}, function(err, flist){
+    if(err){
+      console.log(err);
+    }
+    else
+    {
+      res.render("admin.ejs",{fortunes:flist});
+    }
+  });
+
+
+});
 
 app.listen(port, function () {
     

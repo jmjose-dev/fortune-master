@@ -1,12 +1,38 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <h1>What's your fortune?</h1>
-        <% if(firstTime==0){ %>
-        <h1><%=randFortune %></h1>
-        <% } %>
-        <form method="get" action="/getfortune">
-            <button type="submit">Click for Fortune</button>
-        </form>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Fortune Master</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
+    </head>
+    <body>
+        <div class="hero is-fullheight is-dark is-bold">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <p class="title is-1">Fortune Master</p>
+                    <p class="subtitle is-3">What's your fortune?</p>
+                    <% if(firstTime==0){ %>
+                    <h1 class="title has-text-primary is-size-1"><%=randFortune %></h1>
+                    <% } %>
+                    <div class="buttons is-centered">
+                            <form>
+                            <button type="submit" class="button is-success is-medium" formaction="/getfortune">Click for Fortune</button>
+                            <button type="submit" class="button is-info is-medium" formaction="/changefortune">Change Fortune</button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-foot">
+                <nav class="tabs">
+                    <div class="container">
+                      <ul>
+                        <li><a href="#">Admin</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+            </div>
+        </div>
     </body>
 </html>

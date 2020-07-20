@@ -28,16 +28,21 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <form>
-                    <p class="title is-1 animate__animated animate__fadeIn">Fortune Master</p>
-                    <p class="subtitle is-3 animate__animated animate__fadeIn">What's your fortune?</p>
+                    <p class="title is-1">Fortune Master</p>
+                    <p class="subtitle is-3">What's your fortune?</p>
                     <% if(firstTime==0 && editMode==0){ %>
-                    <h1 class="title has-text-primary is-size-1 animate__animated animate__fadeInRight" name="fortune"><%=randFortune %></h1>
+                    <h1 class="title has-text-primary is-size-1 animate__animated animate__fadeIn" name="fortune"><%=randFortune %></h1>
                     <% } %>
                     <div class="buttons is-centered">
                             <button type="submit" class="button is-success is-medium" formaction="/getfortune">Click for Fortune</button>
                             <button type="submit" class="button is-info is-medium" formaction="/changefortune">Change Fortune</button>
                     </div>
                     </form>
+                </div>
+                <div>
+                    <figure class="image">
+                        <img src="images/fairy.png">
+                    </figure>
                 </div>
             </div>
             <div class="hero-foot">

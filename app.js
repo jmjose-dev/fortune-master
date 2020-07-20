@@ -14,6 +14,7 @@ var forts = [];
 var x=0;
 var fortuneTotal;
 var randValue;
+var editMode=0;
 //connect defined db to mongoose
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect(url, {useNewUrlParser: true});
@@ -22,6 +23,8 @@ var fortunesSchema = new mongoose.Schema({
     fort: String
 });
 var fortunesList = mongoose.model("allfortunes",fortunesSchema);
+
+
 app.use(bP.urlencoded({extended: true}));
 app.use(ex.static("public"));
 app.use(methodOverride("_method"));
@@ -29,11 +32,11 @@ app.use(sanitizer());
 app.get("/", function (req, res) {
     if (firstTime==1)
     {
-      res.render("index.ejs",{firstTime:firstTime});
+      res.render("index.ejs",{firstTime:firstTime, editMode:0});
     }
     else
     {
-      res.render("index.ejs",{randFortune: forts[randValue], firstTime:firstTime});
+      res.render("index.ejs",{randFortune: forts[randValue], firstTime:firstTime, editMode:0});
     }
 });
 app.get("/getfortune", function (req, res){
@@ -44,6 +47,7 @@ app.get("/getfortune", function (req, res){
     else
     {
       firstTime = 0;
+      x=0;
       flist.forEach(function(flist){
         forts[x]=flist.fort;
         x++;
@@ -54,8 +58,8 @@ app.get("/getfortune", function (req, res){
       res.redirect("/");
     }
   });
-
 });
+
 app.listen(port, function () {
     
     console.log("Server is running");

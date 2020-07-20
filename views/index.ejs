@@ -5,23 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Fortune Master</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 
     </head>
     <body>
         <div class="hero is-fullheight is-dark is-bold">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <p class="title is-1">Fortune Master</p>
-                    <p class="subtitle is-3">What's your fortune?</p>
-                    <% if(firstTime==0){ %>
-                    <h1 class="title has-text-primary is-size-1"><%=randFortune %></h1>
+                    <form>
+                    <p class="title is-1 animate__animated animate__fadeIn">Fortune Master</p>
+                    <p class="subtitle is-3 animate__animated animate__fadeIn">What's your fortune?</p>
+                    <% if(firstTime==0 && editMode==0){ %>
+                    <h1 class="title has-text-primary is-size-1 animate__animated animate__fadeInRight" name="fortune"><%=randFortune %></h1>
                     <% } %>
                     <div class="buttons is-centered">
-                            <form>
                             <button type="submit" class="button is-success is-medium" formaction="/getfortune">Click for Fortune</button>
                             <button type="submit" class="button is-info is-medium" formaction="/changefortune">Change Fortune</button>
-                            </form>
                     </div>
+                    </form>
                 </div>
             </div>
             <div class="hero-foot">

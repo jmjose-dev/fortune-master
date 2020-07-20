@@ -1,7 +1,12 @@
 <html>
     <body>
         <h1>What's your fortune?</h1>
-        <h5>Fortune goes here</h5>
-        <button>Click for Fortune</button>
+        <% if(firstTime==0){ %>
+        <h1><%=randFortune %></h1>
+        <% } %>
+        <form method="get" action="/getfortune">
+            <button type="submit">Click for Fortune</button>
+        </form>
+
     </body>
 </html>

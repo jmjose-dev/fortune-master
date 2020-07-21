@@ -30,6 +30,24 @@ app.use(bP.urlencoded({extended: true}));
 app.use(ex.static("public"));
 app.use(methodOverride("_method"));
 app.use(sanitizer());
+x=0;
+fortunesList.find({}, function(err, flist){
+  if(err){
+    console.log(err);
+  }
+  else
+  {
+    flist.forEach(function(data){
+      forts[x]=data.fortune;
+      x++;        
+    })
+  }
+});
+
+
+
+
+
 app.get("/", function (req, res) {
     if (firstTime==1)
     {
@@ -42,20 +60,7 @@ app.get("/", function (req, res) {
 
   });
 app.get("/getfortune", function (req, res){
-  firstTime = 0;
-  x=0;
-  fortunesList.find({}, function(err, flist){
-    if(err){
-      console.log(err);
-    }
-    else
-    {
-      flist.forEach(function(data){
-        forts[x]=data.fortune;
-        x++;        
-      })
-    }
-  });
+  firstTime = 0;  
   fortuneTotal = forts.length;
   console.log(fortuneTotal);
   randValue = Math.floor(Math.random() * fortuneTotal);

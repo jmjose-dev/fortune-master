@@ -13,6 +13,8 @@ var x=0;
 var fortuneTotal;
 var randValue;
 var editMode=0;
+require('dotenv').config()
+
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 //connect defined db to mongoose

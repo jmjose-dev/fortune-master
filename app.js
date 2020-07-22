@@ -40,13 +40,9 @@ fortunesList.find({}, function(err, flist){
     flist.forEach(function(data){
       forts[x]=data.fortune;
       x++;        
-    })
+    });
   }
 });
-
-
-
-
 
 app.get("/", function (req, res) {
     if (firstTime==1)
@@ -60,7 +56,7 @@ app.get("/", function (req, res) {
 
   });
 app.get("/getfortune", function (req, res){
-  firstTime = 0;  
+  firstTime = 0; 
   fortuneTotal = forts.length;
   console.log(fortuneTotal);
   randValue = Math.floor(Math.random() * fortuneTotal);
